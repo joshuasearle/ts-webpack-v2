@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -7,5 +8,5 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: { rules: [{ test: /\.tsx?$/, loader: 'ts-loader' }] },
-  plugins: [],
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
 };
